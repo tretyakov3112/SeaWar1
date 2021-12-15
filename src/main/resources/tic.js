@@ -17,7 +17,7 @@ function myfunc() {
     arr = ["","","","","","","","",""];
     // Checking if Player X won or not and after
     // that disabled all the other fields
-    function isWon(char c) {
+    function isWon(c) {
         if ((b1 == c) && (b2 == c) && (b3 == c)) {
             return true;
         }
