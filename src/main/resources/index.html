@@ -14,13 +14,17 @@
 
 <body>
 <div id="main">
-    <h1>TIC TAC TOE</h1>
+    <h1>SEE WAR</h1>
 
     <!-- Game Instructions -->
     <p id="ins">Game starts by just Tap on
-        box<br><br>First Player starts as
-        <b>Player X</b><br>And<br>Second
-        Player as <b>Player 0</b>
+        box<br><br>Red square means successful hit<br><br>"O" means miss
+    </p>
+
+    <p id="ins1">Your Field<br><br><b>Before the game started fill your field by ships</b>
+    </p>
+
+    <p id="ins2">Computer Field<br><br>
     </p>
 
 
@@ -55,6 +59,9 @@
     <input type="text" id="b9" onclick=
             "stepPlayer('b9')" readonly>
 
+
+
+
     <!-- Grid end here -->
     <br><br><br>
     <!-- Button to reset game -->
@@ -77,6 +84,7 @@
     h1 {
         color: orangered;
         font-size: 45px;
+        text-align: center;
     }
 
     /* 3*3 Grid */
@@ -84,7 +92,7 @@
     #b6, #b7, #b8, #b9 {
         width: 80px;
         height: 52px;
-        margin: auto;
+        margin-left: 0;
         border: 1px solid gray;
         border-radius: 6px;
         font-size: 30px;
@@ -106,6 +114,7 @@
         color: white;
         font-size: 20px;
         cursor: pointer;
+        text-align: center;
     }
 
     /* Player turn space */
@@ -118,9 +127,9 @@
     }
 
     /* Main Container */
-    #main {
+   /* #main {
         text-align: center;
-    }
+    }*/
 
     /* Game Instruction Text */
     #ins {
@@ -129,6 +138,23 @@
 
         color: dodgerblue;
         font-size: 17px;
+        text-align: center;
+    }
+    #ins1{
+        font-family: Verdana,
+        Geneva, Tahoma, sans-serif;
+
+        color: dodgerblue;
+        font-size: 17px;
+        text-align: left;
+    }
+    #ins2 {
+        font-family: Verdana,
+        Geneva, Tahoma, sans-serif;
+
+        color: dodgerblue;
+        font-size: 17px;
+        text-align: right;
     }
 </style>
 
