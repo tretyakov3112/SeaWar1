@@ -21,15 +21,16 @@
         box<br><br>Red square means successful hit<br><br>"O" means miss
     </p>
 
-    <p id="ins1">Your Field<br><br><b>Before the game started fill your field by ships</b>
-    </p>
-
-    <p id="ins2">Computer Field<br><br>
-    </p>
+        <p class="alignleft">Your Field<br><br><b>Before the game started fill your field by ships</b></p>
+        <p class="alignright">Computer Field<br><br></p>
+        <div style="clear: both;"></div>
 
 
     <br><br>
     <!-- 3*3 grid of Boxes -->
+    <input type="text" id="b0" onclick=
+            "stepPlayer('b0')" readonly>
+
     <input type="text" id="b1" onclick=
             "stepPlayer('b1')" readonly>
 
@@ -38,7 +39,6 @@
 
     <input type="text" id="b3" onclick=
             "stepPlayer('b3')" readonly>
-    <br><br>
 
     <input type="text" id="b4" onclick=
             "stepPlayer('b4')" readonly>
@@ -48,7 +48,7 @@
 
     <input type="text" id="b6" onclick=
             "stepPlayer('b6')" readonly>
-    <br><br>
+
 
     <input type="text" id="b7" onclick=
             "stepPlayer('b7')" readonly>
@@ -58,6 +58,39 @@
 
     <input type="text" id="b9" onclick=
             "stepPlayer('b9')" readonly>
+    <br><br>
+
+    <input type="text" id="b10" onclick=
+            "stepPlayer('b10')" readonly>
+
+    <input type="text" id="b11" onclick=
+            "stepPlayer('b11')" readonly>
+
+    <input type="text" id="b12" onclick=
+            "stepPlayer('b12')" readonly>
+
+    <input type="text" id="b13" onclick=
+            "stepPlayer('b13')" readonly>
+
+
+    <input type="text" id="b14" onclick=
+            "stepPlayer('b14')" readonly>
+
+    <input type="text" id="b15" onclick=
+            "stepPlayer('b15')" readonly>
+
+    <input type="text" id="b16" onclick=
+            "stepPlayer('b16')" readonly>
+
+
+    <input type="text" id="b17" onclick=
+            "stepPlayer('b17')" readonly>
+
+    <input type="text" id="b18" onclick=
+            "stepPlayer('b18')" readonly>
+
+    <input type="text" id="b19" onclick=
+            "stepPlayer('b19')" readonly>
 
 
 
@@ -87,11 +120,24 @@
         text-align: center;
     }
 
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+  width: 30%;
+}
+
+ br{
+    display: block;
+    margin: 100px 100;
+  }
     /* 3*3 Grid */
-    #b1, #b2, #b3, #b4, #b5,
-    #b6, #b7, #b8, #b9 {
-        width: 80px;
-        height: 52px;
+    #b0, #b1, #b2, #b3, #b4, #b5,
+    #b6, #b7, #b8, #b9, #b10, #b11, #b12, #b13, #b14, #b15,
+    #b16, #b17, #b18, #b19 {
+        width: 40px;
+        height: 40px;
         margin-left: 0;
         border: 1px solid gray;
         border-radius: 6px;
@@ -127,9 +173,15 @@
     }
 
     /* Main Container */
-   /* #main {
+   #main {
+    font-family: Verdana,
+        Geneva, Tahoma, sans-serif;
+
+        color: dodgerblue;
+        font-size: 17px;
         text-align: center;
-    }*/
+        text-align: center;
+    }
 
     /* Game Instruction Text */
     #ins {
@@ -140,21 +192,6 @@
         font-size: 17px;
         text-align: center;
     }
-    #ins1{
-        font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
 
-        color: dodgerblue;
-        font-size: 17px;
-        text-align: left;
-    }
-    #ins2 {
-        font-family: Verdana,
-        Geneva, Tahoma, sans-serif;
-
-        color: dodgerblue;
-        font-size: 17px;
-        text-align: right;
-    }
 </style>
 

@@ -91,6 +91,16 @@ function myfunc_2() {
 
 }
 
+/*function createField(){
+for (i = 1; i < 4; i++) {
+    i1 = toString(i);
+    s = "b"+i1;
+    print('<input type='+&quot;+'text'+&quot;+' id='+s+' onclick='+
+                       &quot;+'stepPlayer('+s+')'+&quot;+' readonly>')
+    }
+
+}*/
+
 // Here onwards, functions check turn of the player
 // and put accordingly value X or 0
 flag = 1;
