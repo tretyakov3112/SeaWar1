@@ -225,24 +225,33 @@ function myfunc() {
         }
     }*/
 
-/*    function int[][] randomField(){
-        //int[][] field = new int[10][10];
-
-        for (let i = 0; i < 10; i++) {
-
-            for (let j = 0; j < 10; j++) {
-                field[i][j] = 0;
-            }
-            Random random = new Random();
-            k = random.nextInt(10);
-            field[i][k] = 1;
-        }
-        return field;
-    }*/
-
-    function isWon(c) {
-
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
     }
+   function  randomField(c){
+        //int[][] field = new int[10][10];
+       arr = [];
+        for (let i = 0; i < 10; i++) {
+            k = getRandomInt(0,10);
+            arr[i] = document.getElementById(c+(10*i+k)).value;
+        }
+        return arr;
+    }
+
+    myField = randomField("b");
+    myCount = 10;
+    compField = randomField("a");
+    compCount = 10;
+
+    for (let i = 0; i < 10; i++) {
+        element1 = myField[i];
+        element2 = compField[i];
+        element1.value = "X";
+        element2.value = "X";
+    }
+
 
 
 }
@@ -254,7 +263,7 @@ function myfunc_2() {
     for (let i = 0; i < 100; i++) {
         arr1[i] = '';
     }
-    a =10;
+    //a =10;
 }
 
 
@@ -264,13 +273,31 @@ flag = 1;
 function stepPlayer(elementId) {
     let element = document.getElementById(elementId);
     element.disabled = true;
-    if (flag == 1) {
-        element.value = "X";
-        flag = 0;
+    for (let i = 0; i < 10; i++) {
+        if (flag == 1 && compField[i] == element) {
+            element.value = "XXX";
+            compCount--;
+            flag = 0;
+            break;
+        } else if (flag == 1 && compField[i] != element && i == 9) {
+            element.value = "0";
+            flag = 0;
+        }
     }
-    else {
-        element.value = "0";
-        flag = 1;
+
+    k = getRandomInt(0,10);
+    el = document.getElementById(c+(10*i+k)).value;
+    for (let i = 0; i < 10; i++) {
+        if (flag == 0 && myField[i] == element) {
+            el.value = "XXX";
+            compCount--;
+            flag = 1;
+            break;
+        } else if (flag == 0 && myField[i] != element && i == 9) {
+            el.value = "0";
+            flag = 1;
+        }
     }
+
     myfunc();
 }
