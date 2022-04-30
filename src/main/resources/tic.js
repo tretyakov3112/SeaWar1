@@ -222,14 +222,19 @@
     function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+        return Math.floor(Math.random() * (max - min)) + min;
     }
    function  randomField(c){
        let arr = ["", "", "", "", "", "", "", "", "", ""];
        let k;
        for (let i = 0; i < 10; i++) {
            k = getRandomInt(0, 10);
-           arr[i] = arr1[10 * c * i + k];
+           if (c ==1){
+               arr[i] = arr1[10 * c * i + k];
+           } else {
+               arr[i] = arr1[100+10 * c * i + k];
+           }
+
        }
         return arr;
     }
@@ -238,10 +243,9 @@
     let myCount = 10;
     let compField = randomField(2);
     let compCount = 10;
-
-function myfunc() {
     let element1;
     let element2;
+function myfunc() { ///???
     for (let i = 0; i < 10; i++) {
         element1 = myField[i];
         element2 = compField[i];
