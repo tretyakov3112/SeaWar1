@@ -234,7 +234,7 @@ window.onload = function () {
         element1 = myField[i];
         element2 = compField[i];
         element1.value = "X";
-        element2.value = "X";
+        //element2.value = "X";
     }
 }
 
@@ -278,13 +278,14 @@ function stepPlayer(elementId) {
     let element = document.getElementById(elementId);
     element.disabled = true;
     for (let i = 0; i < 10; i++) {
-        if (flag === 1 && compField[i] === element) {
-            element.value = "XX";
+        if (myCount !== 0 && compCount !== 0 && flag === 1 && compField[i] === element) {
+            element.value = "X";
+            element.style.color = "orangered";
             compCount--;
             flag = 0;
             break;
         }
-        if (flag === 1 && element.value !== "XX" && i === 9) {
+        if (myCount !== 0 && compCount !== 0 && flag === 1 && element.style.color !== "orangered" && i === 9) {
             element.value = "0";
             flag = 0;
         }
@@ -292,16 +293,21 @@ function stepPlayer(elementId) {
     let k = getRandomInt(0, 10);
     let i = getRandomInt(0, 10);
     let el = document.getElementById("b" + (10 * i + k));
+    while (el.value === "0" || el.style.color === "orangered"){
+        k = getRandomInt(0, 10);
+        i = getRandomInt(0, 10);
+        el = document.getElementById("b" + (10 * i + k));
+    }
 
 
     for (let i = 0; i < 10; i++) {
-        if (flag === 0 && myField[i] === el) {
-            el.value = "XX";
+        if (myCount !== 0 && compCount !== 0 && flag === 0 && myField[i] === el) {
+            el.style.color = "orangered";
             myCount--;
             flag = 1;
             break;
         }
-        if (flag === 0 && el.value !== "XX" && i === 9) {
+        if (myCount !== 0 && compCount !== 0 && flag === 0 && el.style.color !== "orangered" && i === 9) {
             el.value = "0";
             flag = 1;
         }
